@@ -1,4 +1,4 @@
-const number = require('./Number');
+const number = require('./number');
 
 function fizzBuzz(num) {
   if(number.isMultipleofThree(num) && number.isMultipleofFive(num)) {
