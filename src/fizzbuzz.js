@@ -1,17 +1,17 @@
-const number = require('./number');
+const numberUtils = require('./numberUtils');
 
 const fizz = 'Fizz';
 const buzz = 'Buzz';
 
-function fizzBuzz(num) {
-  if (number.isMultipleofThree(num) && number.isMultipleofFive(num)) {
+function fizzBuzz(number) {
+  if (numberUtils.isMultipleOf(number, 3) && numberUtils.isMultipleOf(number, 5)) {
     return fizz + buzz;
-  } if (number.isMultipleofThree(num)) {
+  } if (numberUtils.isMultipleOf(number, 3)) {
     return fizz;
-  } if (number.isMultipleofFive(num)) {
+  } if (numberUtils.isMultipleOf(number, 5)) {
     return buzz;
   }
-  return num;
+  return number;
 }
 
 module.exports = fizzBuzz;
