@@ -12,5 +12,8 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-plusplus": "off",
+        "radix": "off",
+        "import/extensions": "off"
     }
 }
