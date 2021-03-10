@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ci": "npm run eslint && npm run test",
-    "eslint": "eslint src",
+    "eslint": "eslint fizzbuzz/src",
     "test": "jest"
   },
   "repository": {
