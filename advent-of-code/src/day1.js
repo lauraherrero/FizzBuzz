@@ -24,5 +24,5 @@ const adventOfCode = (array) => {
     }
   }
 }
-input = input.map(element => parseInt(element));
-console.log(adventOfCode(input)); // eslint-disable-line no-console
+
+console.log(adventOfCode(input.map(element => parseInt(element)))); // eslint-disable-line no-console
