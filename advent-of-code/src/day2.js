@@ -4,38 +4,47 @@
 // Averiguar del listado aquellos que cumplen las especificaciones
 
 /* eslint-disable */
-import { readFileSync } from 'fs';
+const fs = require("fs");
 
 const removeLastElement = (array) => array.slice(0, -1);
-const input = removeLastElement(readFileSync('./src/inputDay2.txt').toString().split('\n'));
+const input = removeLastElement(fs.readFileSync('./src/inputDay2.txt').toString().split('\n'));
 
-let validPassCount = 0;
+const dayTwo = (input) => {
+  let validPassCount = 0;
 
-for (let i = 0; i < input.length; i++) {
-  const [numbers, letterWithColon, password] = input[i].split(' ');
-  const [min, max] = numbers.split('-');
-  const letter = letterWithColon[0];
-  const numOfOccurrences = (password.match(new RegExp(letter, 'g')) || []).length;
+  for (let i = 0; i < input.length; i++) {
+    const [numbers, letterWithColon, password] = input[i].split(' ');
+    const [min, max] = numbers.split('-');
+    const letter = letterWithColon[0];
+    const numOfOccurrences = (password.match(new RegExp(letter, 'g')) || []).length;
 
-  if (numOfOccurrences >= min && numOfOccurrences <= max) {
-    validPassCount++;
+    if (numOfOccurrences >= min && numOfOccurrences <= max) {
+      validPassCount++;
+    }
   }
-}
 
-console.log(validPassCount); // eslint-disable-line no-console
+  return validPassCount;
+};
 
-let validPassCountTwo = 0;
+console.log(dayTwo(input)); // eslint-disable-line no-console
 
-for (let i = 0; i < input.length; i++) {
-  const [numbers, letterWithColon, password] = input[i].split(' ');
-  const [min, max] = numbers.split('-').map((x) => x - 1);
-  const letter = letterWithColon[0];
-  if (password[min] === letter ^ password[max] === letter) { // eslint-no-bitwise: 2
-    validPassCountTwo += 1;
+const dayTwoPartTwo = (input) => {
+  let validPassCountTwo = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    const [numbers, letterWithColon, password] = input[i].split(' ');
+    const [min, max] = numbers.split('-').map((x) => x - 1);
+    const letter = letterWithColon[0];
+    if (password[min] === letter ^ password[max] === letter) {
+      validPassCountTwo += 1;
+    }
   }
-}
 
-console.log(validPassCountTwo); // eslint-disable-line no-console
+  return validPassCountTwo;
+};
+console.log(dayTwoPartTwo(input)); // eslint-disable-line no-console
 
 // Probar con utf-8, necesitamos toString
 // Resolver path relativo, __dirname
+
+module.exports = { dayTwo, dayTwoPartTwo };

@@ -201,4 +201,4 @@ const input = [
   '1662',
 ];
 
-export default input;
+module.exports = {input};

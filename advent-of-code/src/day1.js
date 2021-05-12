@@ -1,18 +1,18 @@
-import input from './input-day-1.js';
+const input = require('./input-day-1');
 
-// const adventOfCode = (array) => { // eslint-disable-line consistent-return
-//   for (let i = 0; i < array.length; i++) {
-//     for (let j = i + 1; j < array.length; j++) {
-//       if (parseInt(array[i]) + parseInt(array[j]) === 2020) {
-//         return parseInt(array[i]) * parseInt(array[j]);
-//       }
-//     }
-//   }
-// };
+const adventOfCode = (array) => { // eslint-disable-line consistent-return
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (parseInt(array[i]) + parseInt(array[j]) === 2020) {
+        return parseInt(array[i]) * parseInt(array[j]);
+      }
+    }
+  }
+};
 
 // console.log(adventOfCode(input)); // eslint-disable-line no-console
 
-const adventOfCode = (array) => {
+const adventOfCodePartTwo = (array) => {
   for (let i = 0; i < array.length; i++) {
     for (let j = i + 1; j < array.length; j++) {
       for (let k = i + 1; k < array.length; k++) {
@@ -24,4 +24,6 @@ const adventOfCode = (array) => {
   } return array;
 };
 
-console.log(adventOfCode(input.map((item) => parseInt(item)))); // eslint-disable-line no-console
+// console.log(adventOfCodePartTwo(input.map((item) => parseInt(item)))); // eslint-disable-line no-console
+
+module.exports = { adventOfCode, adventOfCodePartTwo };
