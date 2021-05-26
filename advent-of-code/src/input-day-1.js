@@ -201,4 +201,4 @@ const input = [
   '1662',
 ];
 
-module.exports = {input};
+module.exports = input;

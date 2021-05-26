@@ -4,10 +4,11 @@
 // Averiguar del listado aquellos que cumplen las especificaciones
 
 /* eslint-disable */
-const fs = require("fs");
+const fs = require('fs');
+const path = require('path');
 
 const removeLastElement = (array) => array.slice(0, -1);
-const input = removeLastElement(fs.readFileSync('./src/inputDay2.txt').toString().split('\n'));
+const input = removeLastElement(fs.readFileSync(path.join(__dirname, 'inputDay2.txt')).toString().split('\n'));
 
 const dayTwo = (input) => {
   let validPassCount = 0;

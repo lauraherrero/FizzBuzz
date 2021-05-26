@@ -3,9 +3,9 @@
 // 3. Número de líneas * Número de movimientos hacia la dcha (ancho) de la línea
 // 4. Crear matrix, For (i) line = map[i] || matrix[i] = line.repeat()
 
-import { readFileSync } from 'fs';
+const fs = require('fs');
 
-const map = readFileSync('./src/inputDay3.txt', 'utf8').split('\n'); // Reads the values
+const map = fs.readFileSync('./src/inputDay3.txt', 'utf8').split('\n'); // Reads the values
 
 const MOVEMENT_DOWN = 1;
 const MOVEMENT_RIGHT = 3;

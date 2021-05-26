@@ -1,0 +1,3 @@
+nombre, apellidos, telefono
+arturo, herrero, 645193846
+laura, herrero, 343434

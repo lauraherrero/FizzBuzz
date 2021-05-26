@@ -1,5 +1,3 @@
-const input = require('./input-day-1');
-
 const adventOfCode = (array) => { // eslint-disable-line consistent-return
   for (let i = 0; i < array.length; i++) {
     for (let j = i + 1; j < array.length; j++) {
